@@ -13,7 +13,7 @@ public class DoesStringExist {
         System.out.println("Enter a term to search: ");
         String searchFor = input.nextLine().toLowerCase();
         if (aliceQuote.toLowerCase().contains(searchFor)) {
-            Integer indexOf = aliceQuote.indexOf(searchFor);
+            Integer indexOf = aliceQuote.indexOf(aliceQuote);
             Integer length = searchFor.length();
             System.out.println("Search term found at index " + indexOf + " with a length of " + length + " characters");
             String modifiedSentence = aliceQuote.replace(searchFor, "");
