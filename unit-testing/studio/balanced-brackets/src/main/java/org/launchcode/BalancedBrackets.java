@@ -1,4 +1,5 @@
 package org.launchcode;
+
 public class BalancedBrackets {
     /*
      * The function BalancedBrackets should return true if and only if
@@ -21,10 +22,14 @@ public class BalancedBrackets {
      */
     public static boolean hasBalancedBrackets(String str) {
         int brackets = 0;
-        for (char ch : str.toCharArray()) {
+        char[] input = str.toCharArray();
+        for (char ch : input) {
             if (ch == '[') {
-                brackets++;
+                brackets++; // opening bracket increments brackets by 1
             } else if (ch == ']') {
+                if (brackets == 0) { // if bracket is 0 when ']' is seen, that means we haven't seen an opening, therefore false..
+                    return false;
+                }
                 brackets--;
             }
         }
