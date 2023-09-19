@@ -3,7 +3,7 @@ package org.launchcode;
 public interface OpticalDisc {
 
 
-    void spin();
+    String spin();
 
     void storeData();
 

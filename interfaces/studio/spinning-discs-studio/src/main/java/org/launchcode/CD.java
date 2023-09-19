@@ -2,17 +2,18 @@ package org.launchcode;
 
 public class CD extends Disc implements OpticalDisc {
 
-    public CD(double extraStorage, double storageCapacity, double rpm, String title, String year, double runtime) {
-        super(extraStorage, storageCapacity, rpm, title, year, runtime);
+    public CD(double extraStorage, double storageCapacity, String title, String year, double runtime) {
+        super(extraStorage, storageCapacity, title, year, runtime);
     }
 
-    public CD(double storageCapacity, double rpm) { // ability to create "blank" discs.
-        super(storageCapacity, rpm);
+    public CD(double storageCapacity) { // ability to create "blank" discs.
+        super(storageCapacity);
     }
 
     @Override
-    public void spin() {
-        System.out.println(this.getTitle() + " spins at a rate of " + this.getRpm() + " rpm");
+    public String spin() {
+        return this.getTitle() + " spins at a rate of " + 200 + " - " + 500 + " rpm";
+
     }
 
     @Override

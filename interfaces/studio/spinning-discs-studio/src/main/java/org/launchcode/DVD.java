@@ -1,24 +1,24 @@
 package org.launchcode;
 
 public class DVD extends Disc implements OpticalDisc {
-    public DVD(double storageCapacity, double extraStorage, double rpm, String title, String year, double runtime) {
-        super(storageCapacity, extraStorage, rpm, title, year, runtime);
+    public DVD(double storageCapacity, double extraStorage, String title, String year, double runtime) {
+        super(storageCapacity, extraStorage, title, year, runtime);
     }
 
-    public DVD(double storageCapacity, double rpm) {
-        super(storageCapacity, rpm);
+    public DVD(double storageCapacity) {
+        super(storageCapacity);
     }
 
     @Override
-    public void spin() {
-        System.out.println(this.getTitle() + " spins at a rate of " + this.getRpm() + " rpm");
+    public String spin() {
+        return this.getTitle() + " spins at a rate of " + 570 + " - " + 1600 + " rpm";
 
     }
 
     @Override
     public void storeData() {
         System.out.println("This CD has " + getExtraStorage() + " mb's of extra data");
-        
+
     }
 
     @Override

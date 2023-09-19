@@ -3,26 +3,31 @@ package org.launchcode;
 public class Disc {
     private boolean isLoaded = false;
     private double storageCapacity;
-    private double rpm;
     private String title;
     private String year;
     private double runtime;
     private double extraStorage;
 
-    public Disc(double storageCapacity, double addedStorage, double rpm, String title, String year, double runtime) {
+    public Disc(double storageCapacity, double addedStorage, String title, String year, double runtime) {
 
         this.storageCapacity = storageCapacity;
         this.extraStorage = addedStorage;
-        this.rpm = rpm;
         this.title = title;
         this.year = year;
         this.runtime = runtime;
     }
 
-    public Disc(double storageCapacity, double rpm) {
+    public Disc(double storageCapacity) {
 
         this.storageCapacity = storageCapacity;
-        this.rpm = rpm;
+
+    }
+
+    public Disc(double storageCapacity, String title, String year, double runtime) {
+        this.storageCapacity = storageCapacity;
+        this.title = title;
+        this.year = year;
+        this.runtime = runtime;
     }
 
     @Override
@@ -31,7 +36,7 @@ public class Disc {
         return "Title: " + this.getTitle() + newline +
                 "Year Released: " + this.getYear() + newline +
                 "Total Runtime: " + this.getRuntime() + " minutes" + newline +
-                "Total Storage: " + (this.storageCapacity + this.extraStorage) + "megabytes " + newline +
+                "Total Storage: " + (this.storageCapacity + this.extraStorage) + " megabytes " + newline +
                 "Currently Loaded : " + this.getIsLoaded() + newline;
     }
 
@@ -47,9 +52,6 @@ public class Disc {
         return extraStorage;
     }
 
-    public double getRpm() {
-        return rpm;
-    }
 
     public String getTitle() {
         return title;
